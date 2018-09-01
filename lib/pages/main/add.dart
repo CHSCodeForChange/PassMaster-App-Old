@@ -10,7 +10,10 @@ class Add extends StatelessWidget {
         children: <Widget>[
           new Container(
             width: double.infinity,
-            child: new Dropdown(["Teacher", "Location", "SRT"]),
+            child: new Container(
+              margin: EdgeInsets.only(top: 40.0, left: 20.0, right: 20.0),
+              child: new Dropdown(["Teacher", "Location", "SRT"])
+            ),
           )
         ],
       ),

@@ -16,14 +16,13 @@ class Passes extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: TabBar(
-            indicatorColor: Colors.orangeAccent,
+            labelColor: Colors.white,
             tabs: [
               Tab(icon: Icon(Icons.search)),
               Tab(text: 'Current'),
               Tab(text: 'Unapproved'),
             ],
           ),
-          backgroundColor: Colors.orangeAccent,
 
           body: TabBarView(
             children: [

@@ -30,30 +30,36 @@ class MainState extends State<Main> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.orangeAccent,
-
-      bottomNavigationBar: BottomNavigationBar(
-        fixedColor: Colors.orangeAccent,
-        currentIndex: index, 
-        onTap: onTabTapped,
-        items: [
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.add),
-            title: new Text('Add'),
-          ),
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
-            title: new Text('Home'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard),
-            title: Text('Passes')
-          )
-        ],
+    return Theme(
+      data: ThemeData(
+        scaffoldBackgroundColor: Colors.orangeAccent,
+        primaryColor: Colors.orangeAccent,
+        accentColor: Colors.white,
       ),
+      child: Scaffold(
 
-      body: pages[index],
+        bottomNavigationBar: BottomNavigationBar(
+           
+          currentIndex: index, 
+          onTap: onTabTapped,
+          items: [
+            BottomNavigationBarItem(
+              icon: new Icon(Icons.add),
+              title: new Text('Add'),
+            ),
+            BottomNavigationBarItem(
+              icon: new Icon(Icons.home),
+              title: new Text('Home'),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.dashboard),
+              title: Text('Passes')
+            )
+          ],
+        ),
+
+        body: pages[index],
+      )
     );
   }
 }

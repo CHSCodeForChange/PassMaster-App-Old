@@ -21,11 +21,10 @@ class Pass extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             new Container(
-              color: Colors.amber,
               child: new Text(
                 this.pass.student.getName(),
                 textAlign: TextAlign.left,
-                style: TextStyle(color: Colors.black, fontSize: 35.0, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 35.0, fontWeight: FontWeight.bold),
               ),
             ),
             new Container(

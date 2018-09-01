@@ -10,7 +10,7 @@ class SearchFilters extends StatelessWidget {
         new Expanded(
           child: new TextFormField(   
             decoration: InputDecoration(
-              labelText: 'Search',
+              hintText: 'Search',
               border: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
               labelStyle: TextStyle(color: Colors.black),
               filled: true,
