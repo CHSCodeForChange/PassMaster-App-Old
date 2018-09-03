@@ -3,18 +3,22 @@ import 'package:flutter/widgets.dart';
 
 class Dropdown extends StatefulWidget {
   List<String> strings = [];
+  var function;
 
-  Dropdown(this.strings);
+  Dropdown(this.strings, this.function);
 
   @override
-  DropdownState createState() => new DropdownState(this.strings);
+  DropdownState createState() => new DropdownState(this.strings, this.function);
 }
 
 class DropdownState extends State<Dropdown> {
   int value = 0;
+  var function;
   List<DropdownMenuItem> types = [];
 
-  DropdownState (List<String> strings) {
+  DropdownState (List<String> strings, var function) {
+    this.function = function;
+
     for (int i = 0; i < strings.length; i++) {
       types.add(
         new DropdownMenuItem(
@@ -42,9 +46,10 @@ class DropdownState extends State<Dropdown> {
             setState(() {
               this.value = value; 
             });
+            function(value);
           },
         )
       )
     );
-  }
+  }  
 }

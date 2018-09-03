@@ -34,7 +34,7 @@ class MainState extends State<Main> {
       data: ThemeData(
         scaffoldBackgroundColor: Colors.orangeAccent,
         primaryColor: Colors.orangeAccent,
-        accentColor: Colors.white,
+        accentColor: Colors.orangeAccent,
       ),
       child: Scaffold(
 
