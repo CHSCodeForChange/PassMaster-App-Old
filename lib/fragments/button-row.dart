@@ -44,7 +44,6 @@ class ButtonRowState extends State<ButtonRow> {
   Widget build(BuildContext context) {
     return new Row (
       children: buttons,
-      
     );
   }
 }

@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../main/main.dart';
-import './signup.dart';
 
-class Login extends StatelessWidget {
+class Signup extends StatelessWidget {
  
   @override
   Widget build(BuildContext context) {
@@ -26,7 +25,29 @@ class Login extends StatelessWidget {
               child: new Column(
                 children: <Widget>[
                   new Container(
-                    margin: EdgeInsets.all(10.0),
+                    margin: EdgeInsets.all(5.0),
+                    child: new TextFormField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        fillColor: Colors.white,
+                        filled: true,
+                        hintText: 'First Name'
+                      ),
+                    )
+                  ), 
+                  new Container(
+                    margin: EdgeInsets.all(5.0),
+                    child: new TextFormField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        fillColor: Colors.white,
+                        filled: true,
+                        hintText: 'Last Name'
+                      ),
+                    )
+                  ),
+                  new Container(
+                    margin: EdgeInsets.all(5.0),
                     child: new TextFormField(
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
@@ -35,15 +56,37 @@ class Login extends StatelessWidget {
                         hintText: 'Username'
                       ),
                     )
-                  ), 
+                  ),
                   new Container(
-                    margin: EdgeInsets.all(10.0),
+                    margin: EdgeInsets.all(5.0),
+                    child: new TextFormField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        fillColor: Colors.white,
+                        filled: true,
+                        hintText: 'Email'
+                      ),
+                    )
+                  ),
+                  new Container(
+                    margin: EdgeInsets.all(5.0),
                     child: new TextFormField(
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         fillColor: Colors.white,
                         filled: true,
                         hintText: 'Password'
+                      ),
+                    )
+                  ),
+                  new Container(
+                    margin: EdgeInsets.all(5.0),
+                    child: new TextFormField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        fillColor: Colors.white,
+                        filled: true,
+                        hintText: 'Confirm Password'
                       ),
                     )
                   )
@@ -56,29 +99,26 @@ class Login extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 new Container(
-                  margin: EdgeInsets.all(5.0),
+                  margin: EdgeInsets.all(10.0),
                   child: new RaisedButton(
                     onPressed: () {
-                       Navigator.push(
+                      Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Main()),
                       );
                     },
-                    child: new Text('Login'),
+                    child: new Text('Sign Up'),
                     color: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
                   ),
                 ),
                 new Container(
-                  margin: EdgeInsets.all(5.0),
+                  margin: EdgeInsets.all(10.0),
                   child: new RaisedButton(
                     onPressed: () {
-                       Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Signup()),
-                      );
+                      Navigator.pop(context);
                     },
-                    child: new Text('Sign Up'),
+                    child: new Text('Login'),
                     color: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
                   ),
