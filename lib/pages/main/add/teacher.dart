@@ -46,7 +46,7 @@ class TeacherPassForm extends StatelessWidget {
             )
           ),
           new TextFormField(
-            maxLines: 6,
+            maxLines: 3,
             decoration: new InputDecoration(
               hintText: 'Description',                          
             )

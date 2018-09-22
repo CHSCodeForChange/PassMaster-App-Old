@@ -7,6 +7,10 @@ import '../../models/user.dart';
 import '../../models/pass.dart';
 
 class Home extends StatelessWidget {
+  UserModel user;
+
+  Home(this.user);
+
   @override
   Widget build(BuildContext context) {
     return new Container(
@@ -14,7 +18,7 @@ class Home extends StatelessWidget {
         children: <Widget>[
           new Container(
             margin: EdgeInsets.only(top:20.0, left: 25.0),
-            child: Header(UserModel.testModel())
+            child: Header(user)
           ),
           new Flexible(
             child: new Container(

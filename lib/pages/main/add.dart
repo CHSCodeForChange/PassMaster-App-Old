@@ -4,14 +4,21 @@ import '../../fragments/dropdown.dart';
 import './add/teacher.dart';
 import './add/srt.dart';
 import './add/location.dart';
+import '../../models/user.dart';
 
 class Add extends StatefulWidget {
+  UserModel user;
+
+  Add(this.user);
 
   @override
-  AddState createState() => new AddState();
+  AddState createState() => new AddState(user);
 }
 
 class AddState extends State<Add> {
+  UserModel user;
+
+  AddState(this.user);
 
   int value = 0;
 
@@ -36,30 +43,33 @@ class AddState extends State<Add> {
   @override
   Widget build(BuildContext context) {
     return Container( 
+      margin: EdgeInsets.only(top: 10.0, bottom: 10.0, left: 10.0, right: 10.0),
       child: new Column(
         children: <Widget>[
           new Container(
             width: double.infinity,
             child: new Container(
-              margin: EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
+              margin: EdgeInsets.only(bottom: 1.25),
               child: new Dropdown(["Teacher", "Location", "SRT"], function)
             ),
           ),
-          new Expanded(
+          new Container(
             child: new Container(
-              margin: EdgeInsets.all(10.0),
+              margin: EdgeInsets.only(top: 1.25, bottom: 1.25),
               padding: EdgeInsets.all(10.0),
               child: new Card(
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),
                 child: new Container(
-                  padding: EdgeInsets.all(20.0),
+                  width: double.infinity,
+
+                  padding: EdgeInsets.all(10.0),
                   child: getForm()
                 )
               ),
             )
           ),
           new Container(
-            margin: EdgeInsets.only(bottom:20.0),
+            margin: EdgeInsets.only(top: 1.25, bottom: 2.5),
             width: 325.0,
             child: new RaisedButton(
               onPressed: () {},

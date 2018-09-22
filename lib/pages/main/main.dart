@@ -4,22 +4,31 @@ import 'package:flutter/widgets.dart';
 import './add.dart';
 import './home.dart';
 import './passes.dart';
+import '../../models/user.dart'; 
 
 class Main extends StatefulWidget {
+  UserModel user;
+
+  Main(this.user);
+
   @override
-  MainState createState() => new MainState();
+  MainState createState() => new MainState(user);
 
 }
 
 class MainState extends State<Main> {
-
-  List pages = [
-    new Add(),
-    new Home(),
-    new Passes()
-  ];
-
+  UserModel user;
+  List pages;
   int index = 1;
+
+  MainState(user) {
+    this.user = user;
+    pages = [
+      new Add(user),
+      new Home(user),
+      new Passes(user)
+    ];
+  }
 
   void onTabTapped(int index) {
     setState(() {

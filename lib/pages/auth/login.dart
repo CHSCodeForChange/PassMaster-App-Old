@@ -3,8 +3,18 @@ import 'package:flutter/widgets.dart';
 
 import '../main/main.dart';
 import './signup.dart';
+import '../../api/login.dart';
+import '../../models/user.dart';
 
 class Login extends StatelessWidget {
+
+  void login(BuildContext context) async {
+    UserModel user = await LoginAPI().getData("student", "student1");
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Main(user)),
+    );
+  }
  
   @override
   Widget build(BuildContext context) {
@@ -59,10 +69,7 @@ class Login extends StatelessWidget {
                   margin: EdgeInsets.all(5.0),
                   child: new RaisedButton(
                     onPressed: () {
-                       Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Main()),
-                      );
+                      login(context);  
                     },
                     child: new Text('Login'),
                     color: Colors.white,

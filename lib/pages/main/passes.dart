@@ -4,8 +4,12 @@ import 'package:flutter/widgets.dart';
 import './passes/current-passes.dart';
 import './passes/unapproved-passes.dart';
 import './passes/search-pass-list.dart';
+import '../../models/user.dart';
 
 class Passes extends StatelessWidget {
+  UserModel user;
+
+  Passes(this.user);
 
   @override
   Widget build(BuildContext context) {

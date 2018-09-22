@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../main/main.dart';
+import '../../models/user.dart';
 
 class Signup extends StatelessWidget {
  
@@ -104,7 +105,7 @@ class Signup extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Main()),
+                        MaterialPageRoute(builder: (context) => Main(UserModel.testModel())),
                       );
                     },
                     child: new Text('Sign Up'),
