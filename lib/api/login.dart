@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import './api.dart';
+import './user.dart';
 import '../models/user.dart';
 
 class LoginAPI extends API {
@@ -16,16 +17,7 @@ class LoginAPI extends API {
       }
     );
     String token = "Token " + json.decode(response.body)['token'];
-
-    url = this.baseUrl + 'user/?format=json';
-    response = await http.get(
-      Uri.encodeFull(url),
-      headers: {
-        "Authorization": token, 
-      }
-    );
-
-    print(UserModel.fromJson(json.decode(response.body)).token);
-    return UserModel.fromJson(json.decode(response.body));
+    
+    return UserAPI().getData(token, null);
   }
 }

@@ -30,9 +30,9 @@ class Passes extends StatelessWidget {
 
           body: TabBarView(
             children: [
-              new SearchPassList(),
-              new CurrentPasses(),
-              new UnapprovedPasses(),
+              new SearchPassList(user),
+              new CurrentPasses(user),
+              new UnapprovedPasses(user),
             ],
           ),
         ),

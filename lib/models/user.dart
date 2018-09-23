@@ -16,11 +16,11 @@ class UserModel {
     return this.firstname + " " + this.lastname;
   }
 
-  UserModel.fromJson(Map<String, dynamic> json): 
+  UserModel.fromJson(Map<String, dynamic> json, String token): 
     username = json['username'],
     firstname = json['first_name'], 
     lastname = json['last_name'],
     email = json['email'],
-    token = "Token " + json['token'],
+    token = token,
     type = json['type'];
 }

@@ -4,11 +4,12 @@ import 'package:flutter/widgets.dart';
 import '../../../fragments/pass-list.dart';
 import '../../../fragments/search-filters.dart';
 import '../../../models/pass.dart';
+import '../../../models/user.dart';
 
 class SearchPassList extends StatelessWidget {
-  PassModel pass;
+  UserModel user;
 
-  SearchPassList();
+  SearchPassList(this.user);
 
   @override
   Widget build(BuildContext context) {
