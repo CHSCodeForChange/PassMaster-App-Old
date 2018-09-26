@@ -21,7 +21,10 @@ class PassMini extends StatelessWidget {
               pass.student.getName(),
               style: TextStyle(fontSize: 35.0, fontWeight: FontWeight.bold),
             ),
-            new Text(pass.getDateDuration())
+            new Text(
+              pass.getDateDuration(),
+              style: TextStyle(fontSize: 17.0),
+            )
           ],
         ),
       ),

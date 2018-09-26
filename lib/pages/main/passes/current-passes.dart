@@ -31,7 +31,9 @@ class CurrentPassesState extends State<CurrentPasses> {
 
   Future<void> getData() async {
     Iterable<PassModel> passes = await PassListAPI().getData(user.token);
-    list.createState();
+    list.state.setState(() {
+      list.state.passes = passes;
+    });
   }
 
   @override

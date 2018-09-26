@@ -16,12 +16,9 @@ class PassListAPI extends API {
       }
     );
     
-    List raw_passes = json.decode(response.body);
+    List rawPasses = json.decode(response.body);
 
-    Iterable<PassModel> passes = (raw_passes).map((i) => new PassModel.fromJson(i));
-    for (PassModel pass in passes) {
-      pass.fillUsers(token);
-    }
+    Iterable<PassModel> passes = (rawPasses).map((i) => new PassModel.fromJson(i));
 
     return passes;
   }

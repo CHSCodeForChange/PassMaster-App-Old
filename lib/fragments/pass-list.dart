@@ -4,19 +4,24 @@ import 'package:flutter/widgets.dart';
 import './pass-mini.dart';
 import '../models/pass.dart';
 
+
 class PassList extends StatefulWidget {
+  PassListState state;
   Iterable<PassModel> passes;
 
   PassList(this.passes);
 
   @override
-  PassListState createState() => new PassListState(passes); 
+  PassListState createState() => new PassListState(passes, this); 
 }
 
 class PassListState extends State<PassList> {
   Iterable<PassModel> passes;
 
-  PassListState(this.passes);
+  PassListState(Iterable<PassModel> passes, PassList parent) {
+    this.passes = passes;
+    parent.state = this;
+  }
 
 
   @override
